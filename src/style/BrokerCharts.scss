@@ -1,0 +1,43 @@
+// Style for the component container
+.broker-charts {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+  
+    // Responsive styling
+    @media screen and (max-width: 768px) {
+      padding: 10px;
+    }
+  
+    // Further adjustments for smaller screens if needed
+    @media screen and (max-width: 480px) {
+      padding: 5px;
+    }
+  }
+  
+  // Style for the header
+  .broker-charts h2 {
+    color: #333;
+  }
+  
+  // Style for the chart container
+  .broker-charts .chart-container {
+    margin-top: 20px;
+  
+    // Responsive styling
+    @media screen and (max-width: 768px) {
+      margin-top: 10px;
+    }
+  }
+  
+  // Style for the chart
+  .broker-charts canvas {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+  
+    // Responsive styling
+    @media screen and (max-width: 768px) {
+      border: none;
+    }
+  }
+  
