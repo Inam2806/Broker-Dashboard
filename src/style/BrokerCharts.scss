@@ -2,7 +2,10 @@
 .broker-charts {
     font-family: 'Arial', sans-serif;
     padding: 20px;
-  
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f5f5f5;
     // Responsive styling
     @media screen and (max-width: 768px) {
       padding: 10px;

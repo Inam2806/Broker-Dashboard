@@ -1,0 +1,26 @@
+// Welcome.scss
+
+.welcome-container {
+  height: 400px; // Full height of the viewport
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff; // Text color
+  overflow: hidden; 
+
+
+
+  // Dark overlay to improve text visibility
+
+
+  h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+}

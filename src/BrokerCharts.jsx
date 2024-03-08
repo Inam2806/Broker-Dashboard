@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
-import 'chart.js/auto'; // Importing 'chart.js/auto' for better responsiveness
+import 'chart.js/auto';
 import './style/BrokerCharts.scss';
 
 const BrokerCharts = ({ brokerData }) => {
   useEffect(() => {
     let chartInstance = null;
 
-    // Function to destroy existing chart
     const destroyChart = () => {
       if (chartInstance) {
         chartInstance.destroy();
@@ -15,7 +14,6 @@ const BrokerCharts = ({ brokerData }) => {
       }
     };
 
-    // Clean up on component unmount
     return () => {
       destroyChart();
     };
@@ -30,9 +28,9 @@ const BrokerCharts = ({ brokerData }) => {
       labels.push(broker['Broker Name']);
       if (broker['Market Type'] === 'Open Market') {
         openMarketData.push(broker['GWP']);
-        facilitiesData.push(0); // Placeholder for Facilities data
+        facilitiesData.push(0);
       } else if (broker['Market Type'] === 'Facilities') {
-        openMarketData.push(0); // Placeholder for Open Market data
+        openMarketData.push(0);
         facilitiesData.push(broker['GWP']);
       }
     });
@@ -60,13 +58,27 @@ const BrokerCharts = ({ brokerData }) => {
 
   const data = prepareChartData();
 
+  const options = {
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Broker',
+        },
+        ticks: {
+          display: false, // Hide x-axis labels
+        },
+      },
+    },
+  };
+
   return (
     <div className="broker-charts">
       <h2>Performance Charts</h2>
       <div className="chart-container">
-        <Bar data={data} options={{ maintainAspectRatio: false }} />
+        <Bar data={data} options={options} />
       </div>
-      {/* Additional charts as needed */}
     </div>
   );
 };
