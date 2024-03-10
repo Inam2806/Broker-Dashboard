@@ -1,46 +1,45 @@
 // Style for the component container
 .broker-charts {
-    font-family: 'Arial', sans-serif;
-    padding: 20px;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f5f5f5;
 
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f5f5f5;
-    // Responsive styling
-    @media screen and (max-width: 768px) {
-      padding: 10px;
-    }
-  
-    // Further adjustments for smaller screens if needed
-    @media screen and (max-width: 480px) {
-      padding: 5px;
-    }
+  // Responsive styling
+  @media screen and (max-width: 768px) {
+    padding: 15px; // Adjust padding for smaller screens
   }
-  
+
+  // Further adjustments for smaller screens if needed
+  @media screen and (max-width: 480px) {
+    padding: 10px; // Adjust padding for even smaller screens
+  }
+
   // Style for the header
-  .broker-charts h2 {
+  h2 {
     color: #333;
   }
-  
+
   // Style for the chart container
-  .broker-charts .chart-container {
+  .chart-container {
     margin-top: 20px;
-  
+
     // Responsive styling
     @media screen and (max-width: 768px) {
-      margin-top: 10px;
+      margin-top: 15px; // Adjust margin for smaller screens
     }
   }
-  
+
   // Style for the chart
-  .broker-charts canvas {
+  canvas {
     width: 100%;
     height: auto;
     border: 1px solid #ddd;
-  
+
     // Responsive styling
     @media screen and (max-width: 768px) {
-      border: none;
+      border: none; // Remove border for smaller screens
     }
   }
-  
+}

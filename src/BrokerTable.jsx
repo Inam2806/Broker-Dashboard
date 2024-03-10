@@ -19,21 +19,18 @@ const BrokerTable = ({ brokerData }) => {
           </tr>
         </thead>
         <tbody>
-          {sortedBrokers.map((broker) => (
-            <tr key={broker.id}>
-              <td>{broker['Broker Name']}</td>
-              <td>{broker['Market Type'] === 'Open Market' ? broker['GWP'] : 0}</td>
-              <td>{broker['Market Type'] === 'Facilities' ? broker['GWP'] : 0}</td>
-              <td>{broker['GWP']}</td>
-              <td>{broker['Planned GWP']}</td>
-              <td>
-                {console.log('Actual GWP:', broker['GWP'])}
-                {console.log('Planned GWP:', broker['Planned GWP'])}
-                {console.log('Percentage:', (((broker['Planned GWP'] - broker['GWP']) / broker['Planned GWP']) * 100).toFixed(2))}
-                {(((broker['Planned GWP'] - broker['GWP']) / broker['Planned GWP']) * 100).toFixed(2)}%
-              </td>
-            </tr>
-          ))}
+        {sortedBrokers.map((broker) => (
+  <tr key={broker.id}>
+    <td>{broker['Broker Name']}</td>
+    <td>{broker['Market Type'] === 'Open Market' ? broker['GWP'].toLocaleString() : 0}</td>
+    <td>{broker['Market Type'] === 'Facilities' ? broker['GWP'].toLocaleString() : 0}</td>
+    <td>{broker['GWP'].toLocaleString()}</td>
+    <td>{broker['Planned GWP'].toLocaleString()}</td>
+    <td className={broker['Planned GWP'] - broker['GWP'] >= 0 ? 'positive' : 'negative'}>
+      {(((broker['Planned GWP'] - broker['GWP']) / broker['Planned GWP']) * 100).toFixed(2)}%
+    </td>
+  </tr>
+))}
         </tbody>
       </table>
     </div>

@@ -18,6 +18,7 @@
 
     .button-container {
       display: flex;
+      flex-direction: column; // Adjust to column layout on mobile and tablet
       gap: 10px;
 
       button {
@@ -54,6 +55,34 @@
 
     tbody tr:hover {
       background-color: #f0f0f0;
+    }
+  }
+
+  // Media Query for Mobile
+  @media only screen and (max-width: 767px) {
+    > div {
+      margin-bottom: 10px; // Adjust margin for better spacing on mobile
+      h3 {
+        font-size: 1.1em; // Adjust font size for h3 on mobile
+        margin-bottom: 8px; // Adjust margin for h3 on mobile
+      }
+      .button-container {
+        flex-direction: row; // Adjust to row layout on mobile
+      }
+    }
+  }
+
+  // Media Query for Tablet
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    > div {
+      margin-bottom: 15px; // Adjust margin for better spacing on tablet
+      h3 {
+        font-size: 1.15em; // Adjust font size for h3 on tablet
+        margin-bottom: 9px; // Adjust margin for h3 on tablet
+      }
+      .button-container {
+        flex-direction: row; // Adjust to row layout on tablet
+      }
     }
   }
 }

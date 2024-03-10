@@ -8,12 +8,9 @@
   align-items: center;
   text-align: center;
   color: #fff; // Text color
-  overflow: hidden; 
-
-
+  overflow: hidden;
 
   // Dark overlay to improve text visibility
-
 
   h2 {
     font-size: 2.5em;
@@ -22,5 +19,31 @@
 
   p {
     font-size: 1.2em;
+  }
+
+  // Media Query for Mobile
+  @media only screen and (max-width: 767px) {
+    height: auto; // Adjust height for mobile view if needed
+    padding: 20px; // Add padding for better spacing on mobile
+    text-align: left; // Adjust text alignment for mobile
+    h2 {
+      font-size: 2em; // Adjust font size for h2 on mobile
+      margin-bottom: 15px; // Adjust margin for h2 on mobile
+    }
+    p {
+      font-size: 1em; // Adjust font size for p on mobile
+    }
+  }
+
+  // Media Query for Tablet
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    height: 300px; // Adjust height for tablet view if needed
+    h2 {
+      font-size: 2.3em; // Adjust font size for h2 on tablet
+      margin-bottom: 18px; // Adjust margin for h2 on tablet
+    }
+    p {
+      font-size: 1.1em; // Adjust font size for p on tablet
+    }
   }
 }

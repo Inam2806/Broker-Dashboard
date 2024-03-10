@@ -53,7 +53,7 @@ const App = () => {
                 <li>
                   <NavLink to="/business-class-analysis" activeClassName="active" style={{ color: 'black' }}><h4>Business Class Analysis</h4></NavLink>
                 </li>
-                {/* Add a link to the chatbot */}
+              
                 <li>
                   <a href="https://mediafiles.botpress.cloud/73923520-cd6a-4d9e-abf3-0b9e315002d0/webchat/bot.html" target="_blank" rel="noopener noreferrer" style={{ color: 'black' }}>
                     <h4>Chatbot</h4>

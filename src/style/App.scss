@@ -3,33 +3,29 @@
   background-image: url(../image/b.jpg);
   color: white;
 
-
   h1 {
     margin-bottom: 20px;
     font-family: 'Times New Roman', Times, serif;
     color: white;
-    
   }
 
-  nav { 
-    background-color: white; /* Background color for the menu bar */
+  nav {
+    background-color: white;
     width: 40%;
     position: relative;
     top: 0%;
     left: 30%;
     text-align: center;
     border-radius: 5px;
-  box-shadow: 2px 2px 5px rgba(244, 244, 244, 0);
-
+    box-shadow: 2px 2px 5px rgba(244, 244, 244, 0);
 
     ul {
       list-style: none;
       padding: 0;
-   
 
       li {
-        display: inline-block;
-        margin: 0 15px;
+        display: block; // Change to block for mobile
+        margin: 10px 0; // Adjust margin for better spacing on mobile
 
         a {
           text-decoration: none;
@@ -38,23 +34,43 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          transition: color 0.3s ease; /* Add a smooth transition effect */
-
+          transition: color 0.3s ease;
 
           &:hover,
           &:active {
-            color: #007bff; // Change the color on hover and when active as desired
+            color: #007bff;
           }
 
           &.active {
-          
-            background-color: #5d83ab; // Set the background color for the active link
-            border: 1px solid #000000;  
+            background-color: #5d83ab;
+            border: 1px solid #000000;
             margin: 1px;
-           
           }
         }
       }
+    }
+  }
+
+  // Media Query for Tablets
+  @media (min-width: 768px) {
+    nav {
+      width: 75%; // Adjust width for tablets
+      left: 12.5%; // Center the menu on tablets
+
+      ul {
+        li {
+          display: inline-block; // Revert to inline-block for tablets
+          margin: 0 15px;
+        }
+      }
+    }
+  }
+
+  // Media Query for larger screens if needed
+  @media (min-width: 1024px) {
+    nav {
+      width: 50%; // Adjust width for larger screens
+      left: 25%; // Center the menu on larger screens
     }
   }
 }

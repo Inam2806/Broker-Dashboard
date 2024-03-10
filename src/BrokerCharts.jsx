@@ -1,30 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 import './style/BrokerCharts.scss';
 
 const BrokerCharts = ({ brokerData }) => {
+  const [selectedYear, setSelectedYear] = useState(null);
+  const [filteredData, setFilteredData] = useState([]);
+
   useEffect(() => {
-    let chartInstance = null;
+    const sortedBrokerData = brokerData.sort((a, b) => a.Year - b.Year);
+    setFilteredData(sortedBrokerData);
+  }, [brokerData]);
 
-    const destroyChart = () => {
-      if (chartInstance) {
-        chartInstance.destroy();
-        chartInstance = null;
-      }
-    };
+  useEffect(() => {
+    if (selectedYear) {
+      const filteredBrokerData = brokerData.filter((broker) => broker.Year === selectedYear);
+      setFilteredData(filteredBrokerData);
+    }
+  }, [selectedYear, brokerData]);
 
-    return () => {
-      destroyChart();
-    };
-  }, []);
+  const years = [...new Set(brokerData.map((broker) => broker.Year))];
+
+  const handleYearChange = (year) => {
+    setSelectedYear(year);
+  };
 
   const prepareChartData = () => {
     const labels = [];
     const openMarketData = [];
     const facilitiesData = [];
 
-    brokerData.forEach((broker) => {
+    filteredData.forEach((broker) => {
       labels.push(broker['Broker Name']);
       if (broker['Market Type'] === 'Open Market') {
         openMarketData.push(broker['GWP']);
@@ -67,15 +73,28 @@ const BrokerCharts = ({ brokerData }) => {
           text: 'Broker',
         },
         ticks: {
-          display: false, // Hide x-axis labels
+          display: false,
         },
       },
+    },
+    animation: {
+      duration: 2000,
+      easing: 'easeInOutQuart',
     },
   };
 
   return (
     <div className="broker-charts">
       <h2>Performance Charts</h2>
+      <div>
+        <label htmlFor="year" style={{color:'black'}}>Select Year:</label>
+        <select id="year" onChange={(e) => handleYearChange(parseInt(e.target.value))}>
+          <option value="">All</option>
+          {years.map((year) => (
+            <option key={year} value={year}>{year}</option>
+          ))}
+        </select>
+      </div>
       <div className="chart-container">
         <Bar data={data} options={options} />
       </div>
