@@ -1,7 +1,11 @@
 .container {
   text-align: center;
   background-image: url(../image/b.jpg);
+  background-size: cover; /* Cover the entire container */
+  background-position: center center; /* Center the background image */
+  background-attachment: fixed; /* Fix the background on scroll */
   color: white;
+  height: 100vh; /* Set the container to the full viewport height */
 
   h1 {
     margin-bottom: 20px;
@@ -66,11 +70,11 @@
     }
   }
 
-  // Media Query for larger screens if needed
+  // Media Query for Laptops
   @media (min-width: 1024px) {
     nav {
-      width: 50%; // Adjust width for larger screens
-      left: 25%; // Center the menu on larger screens
+      width: 50%; // Adjust width for laptops
+      left: 25%; // Center the menu on laptops
     }
   }
 }
