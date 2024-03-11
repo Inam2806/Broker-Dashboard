@@ -1,27 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+}
 .container {
   text-align: center;
-  background-image: url(../image/b.jpg);
-  background-size: cover; /* Cover the entire container */
+  background-image: url(../image/e.jpg);
+  background-size: cover; 
   background-position: center center; /* Center the background image */
   background-attachment: fixed; /* Fix the background on scroll */
-  color: white;
+  color: #000;
   height: 100vh; /* Set the container to the full viewport height */
-
+  font-family: 'Times New Roman', Times, serif;
   h1 {
-    margin-bottom: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: #000;
   }
 
   nav {
     background-color: white;
+  
     width: 40%;
     position: relative;
     top: 0%;
     left: 30%;
     text-align: center;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(244, 244, 244, 0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     ul {
       list-style: none;
@@ -39,7 +42,6 @@
           flex-direction: column;
           align-items: center;
           transition: color 0.3s ease;
-
           &:hover,
           &:active {
             color: #007bff;

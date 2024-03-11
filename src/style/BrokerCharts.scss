@@ -1,10 +1,11 @@
 // Style for the component container
 .broker-charts {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  background-color: #f5f5f5;
+  background-color: #ddd;
 
   // Responsive styling
   @media screen and (max-width: 768px) {
@@ -18,7 +19,8 @@
 
   // Style for the header
   h2 {
-    color: #333;
+    color: #000000;
+    font-weight: bold;
   }
 
   // Style for the chart container

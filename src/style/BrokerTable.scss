@@ -2,10 +2,37 @@ $primaryColor: #3498db;
 $backgroundColor: #ecf0f1;
 $evenRowColor: #f2f2f2;
 
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
 .BrokerTable {
   margin-top: 20px;
   background-color: #f5f5f5;
+  overflow-x: hidden;
+  padding-bottom: 20px;
   h2 {
+    color: $primaryColor;
+  }
+
+  .slider-item {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    h3 {
+      color: $primaryColor;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #333;
+    }
+  }
+
+  .slick-dots li button:before {
     color: $primaryColor;
   }
 
@@ -41,26 +68,25 @@ $evenRowColor: #f2f2f2;
   @media screen and (max-width: 768px) {
     table {
       th, td {
-        font-size: 10px;
-        padding: 4px;
+        font-size: 12px; // Adjust font size for smaller screens
+        padding: 8px; // Adjust padding for smaller screens
       }
 
       th {
-        font-size: 16px;
+        font-size: 14px;
       }
     }
   }
 
   @media screen and (max-width: 480px) {
     table {
-      width: 100%;
       th, td {
-        font-size: 12px;
-        padding: 6px;
+        font-size: 10px; // Adjust font size for even smaller screens
+        padding: 6px; // Adjust padding for even smaller screens
       }
 
       th {
-        font-size: 14px;
+        font-size: 12px;
       }
     }
   }
