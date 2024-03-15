@@ -1,5 +1,6 @@
-# Getting Started with Create React App
 
+<img width="955" alt="image" src="https://github.com/Inam2806/Broker-Dashboard/assets/100591641/f71646b2-ae86-45f0-8fa8-2dd9fbf87873">
+# Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
